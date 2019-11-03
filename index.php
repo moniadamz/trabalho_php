@@ -1,7 +1,7 @@
 <?php
 error_reporting(E_ALL);
-set_time_limit(30);
-ini_set('display_errors', 1);
+ini_set('MAX_EXECUTION_TIME', '-1');
+ini_set('memory_limit', '-1');
 
 /* Database connections */
 $_host = 'localhost';
@@ -19,12 +19,12 @@ $link = new PDO('mysql:dbname=' . $_database . ';host=' . $_host . ';charset=utf
 }
 $link->setAttribute(PDO::ATTR_EMULATE_PREPARES, false);
 
-load_and_insert('calendar', 'gtfs\calendar.csv');
+//load_and_insert('calendar', 'gtfs\calendar.csv');
 //load_and_insert('calendar_dates', 'gtfs\calendar_dates.csv');
 //load_and_insert('routes', 'gtfs\routes.csv');
-//load_and_insert('stop_times', 'gtfs\stop_times');
+//load_and_insert('stop_times', 'gtfs\stop_times.csv');
 //load_and_insert('stops', 'gtfs\stops.csv');
-//load_and_insert('trips', 'gtfs\trips.csv');
+load_and_insert('trips', 'gtfs\trips.csv');
 
 function load_and_insert($table, $file) {
 /* ========= Load file content in an array ========== */
