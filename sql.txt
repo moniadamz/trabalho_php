@@ -42,7 +42,7 @@ CREATE TABLE `routes` (
 DROP TABLE IF EXISTS stop_times;
 
 CREATE TABLE `stop_times` (
-  trip_id VARCHAR(11),
+  trip_id VARCHAR(20),
   arrival_time VARCHAR(8),
   departure_time VARCHAR(8),
   stop_id VARCHAR(11),
